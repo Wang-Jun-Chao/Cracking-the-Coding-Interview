@@ -6,7 +6,7 @@
  * Time: 08:57
  * Declaration: All Rights Reserved !!!
  */
-public class Solution {
+public class Solution06 {
 
     /**
      * ½â·¨
