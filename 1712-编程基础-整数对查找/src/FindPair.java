@@ -9,28 +9,9 @@ import java.util.Arrays;
  */
 public class FindPair {
     public int countPairs(int[] A, int n, int sum) {
-        int rs = 0;
-
+        // 先对数组进行排序
         Arrays.sort(A);
-
         return countPairs(A, 0, A.length - 1, sum);
-
-//        int lo = 0;
-//        int hi = n - 1;
-//
-//        while (lo < hi) {
-//            if (A[lo] + A[hi] == sum) {
-//                rs++;
-//                lo++;
-//                hi--;
-//            } else if (A[lo] + A[hi] < sum) {
-//                lo++;
-//            } else {
-//                hi--;
-//            }
-//        }
-//
-//        return rs;
     }
 
     public int countPairs(int[] A, int beg, int end, int sum) {
@@ -49,10 +30,20 @@ public class FindPair {
                     j--;
                 }
 
-                rs += (i - lo) * (hi - j);
-                lo = i;
-                hi = j;
 
+                rs += (i - lo) * (hi - j);
+
+                // 最中间有多个数，并且这两个数相加相等
+                if (A[lo] == A[hi]) {
+                    // 左边的下标向右移动，右边的不需要移动
+                    lo++;
+                }
+                // 两个数不相同
+                else {
+                    // 分别移动到新的位置，指向新的不同的数字
+                    lo = i;
+                    hi = j;
+                }
             } else if (A[lo] + A[hi] < sum) {
                 lo++;
             } else {

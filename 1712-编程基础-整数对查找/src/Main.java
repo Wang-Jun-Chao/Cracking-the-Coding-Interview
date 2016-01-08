@@ -22,6 +22,7 @@ public class Main {
                 10, 13, 3, 11, 4, 8, 9, 7, 3, 13, 9, 11, 3, 2, 11, 10, 1, 4, 2, 3, 3, 14, 11, 5,
                 10, 1, 14, 8, 1, 11, 3, 1, 9, 14, 6, 1, 7, 15, 10, 14, 6, 4, 12, 11};
 
+        System.out.println();
         int rs = (fp.countPairs(ints2, ints2.length, 16));
         System.out.println(Arrays.toString(ints2));
         System.out.println(rs);
