@@ -13,5 +13,19 @@ public class Main {
         int[] ints = {0, 0, 0, 0, 0, 0};
 
         System.out.println(Arrays.toString(r.renderPixel(ints, 0, 47)));
+        ints = new int[]{0, 0, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(r.renderPixel(ints, 0, 5)));
+        ints = new int[]{0, 0, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(r.renderPixel(ints, 0, 6)));
+        ints = new int[]{0, 0, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(r.renderPixel(ints, 0, 7)));
+        ints = new int[]{0, 0, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(r.renderPixel(ints, 0, 8)));
+
+        ints = new int[]{0, 0, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(r.renderPixel(ints, 7, 7)));
+
+        ints = new int[]{0, 0, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(r.renderPixel(ints, 7, 8)));
     }
 }
