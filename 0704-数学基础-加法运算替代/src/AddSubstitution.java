@@ -7,17 +7,18 @@
  */
 public class AddSubstitution {
     public int calc(int a, int b, int type) {
-        int rs = 0;
+
         switch (type) {
             case 1:
-                break;
+                return multiply(a, b);
             case 0:
-                break;
+                return divide(a, b);
+
             case -1:
-                break;
+                return minus(a, b);
         }
 
-        return rs;
+        return 0;
     }
 
     /**
@@ -57,5 +58,27 @@ public class AddSubstitution {
         }
 
         return sum;
+    }
+
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("divide by zero");
+        }
+
+        int absa = Math.abs(a);
+        int absb = Math.abs(b);
+
+        int p = 0;
+        int x = 0;
+        while (p + absb <= absa) {
+            p += absb;
+            x++;
+        }
+
+        if ((a < 0 && b < 0) || (a > 0 && b > 0)) {
+            return x;
+        } else {
+            return negate(x);
+        }
     }
 }
