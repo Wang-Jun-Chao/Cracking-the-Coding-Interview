@@ -37,7 +37,7 @@ public class ToString {
 
         rs = rs.trim();
         if (rs.endsWith(",")) {
-            return rs.trim().substring(0, rs.length() - 2);
+            return rs.trim().substring(0, rs.length() - 1).trim();
         } else {
             return rs;
         }
