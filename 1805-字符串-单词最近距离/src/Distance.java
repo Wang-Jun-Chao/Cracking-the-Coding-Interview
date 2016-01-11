@@ -14,7 +14,7 @@ public class Distance {
         int j = -1;
 
         for (int k = 0; k < article.length; k++) {
-            String z = article[i];
+            String z = article[k];
 
             if (x.equals(z)) {
                 i = k;
