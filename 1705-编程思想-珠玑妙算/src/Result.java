@@ -34,7 +34,6 @@ public class Result {
             }
         }
 
-
         for (int i = 0; i < guess.length(); i++) {
             // 未命中的
             if (!hit[i]) {
@@ -49,7 +48,6 @@ public class Result {
                 }
             }
         }
-
 
         return rs;
     }
