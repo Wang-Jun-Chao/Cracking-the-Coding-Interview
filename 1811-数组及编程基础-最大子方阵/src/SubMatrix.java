@@ -18,11 +18,6 @@ public class SubMatrix {
         return 0;
     }
 
-    public static class Cell {
-        private int right = 0;
-        private int below = 0;
-    }
-
     public boolean findSquareWithSize(int[][] mat, int size, int type) {
         int count = mat.length - size + 1;
         for (int row = 0; row < count; row++) {
