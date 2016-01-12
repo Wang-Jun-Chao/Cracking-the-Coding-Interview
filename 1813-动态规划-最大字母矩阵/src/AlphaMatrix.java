@@ -8,5 +8,6 @@
 public class AlphaMatrix {
     public int findAlphaMatrix(String[] dic, int n) {
         // write code here
+        return 0;
     }
 }
