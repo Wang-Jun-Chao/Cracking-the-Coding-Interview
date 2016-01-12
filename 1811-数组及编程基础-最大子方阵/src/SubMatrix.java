@@ -8,13 +8,14 @@
 public class SubMatrix {
     public int maxSubMatrix(int[][] mat, int n) {
         for (int i = mat.length; i >= 1; i--) {
-            int size = findSquareWithSize(mat, i);
-            if (size > 0) {
-                return size;
+            boolean bool = findSquareWithSize(mat, i, 0)
+                    || findSquareWithSize(mat, i, 1);
+            if (bool) {
+                return i;
             }
         }
 
-        return 1;
+        return 0;
     }
 
     public static class Cell {
@@ -22,36 +23,36 @@ public class SubMatrix {
         private int below = 0;
     }
 
-    public int findSquareWithSize(int[][] mat, int size) {
+    public boolean findSquareWithSize(int[][] mat, int size, int type) {
         int count = mat.length - size + 1;
         for (int row = 0; row < count; row++) {
             for (int col = 0; col < count; col++) {
-                if (isSquare(mat, row, col, size)) {
-                    return size;
+                if (isSquare(mat, row, col, size, type)) {
+                    return true;
                 }
             }
         }
 
-        return 0;
+        return false;
     }
 
-    private boolean isSquare(int[][] mat, int row, int col, int size) {
+    private boolean isSquare(int[][] mat, int row, int col, int size, int type) {
         for (int i = 0; i < size; i++) {
-            if (mat[row][col + 1] == 1) {
+            if (mat[row][col + i] == type) {
                 return false;
             }
 
-            if (mat[row + size - 1][col + i] == 1) {
+            if (mat[row + size - 1][col + i] == type) {
                 return false;
             }
         }
 
-        for (int i = 0; i < size; i++) {
-            if (mat[row + i][col] == 1) {
+        for (int i = 1; i < size; i++) {
+            if (mat[row + i][col] == type) {
                 return false;
             }
 
-            if (mat[row + size - 1][col] == 1) {
+            if (mat[row + i][col + size - 1] == type) {
                 return false;
             }
         }
